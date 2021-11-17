@@ -45,12 +45,12 @@
       "dockerBuild": {
         "tag": "src:dev",
         "target": "base",
-        "dockerfile": "${workspaceFolder}/Services/Discount/Discount.API/Dockerfile",
+        "dockerfile": "${workspaceFolder}/Services/Discount/Discount.Grpc/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Discount/Discount.API/Discount.API.csproj"
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
     },
     {
@@ -59,12 +59,12 @@
       "dependsOn": ["build"],
       "dockerBuild": {
         "tag": "src:latest",
-        "dockerfile": "${workspaceFolder}/Services/Discount/Discount.API/Dockerfile",
+        "dockerfile": "${workspaceFolder}/Services/Discount/Discount.Grpc/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Discount/Discount.API/Discount.API.csproj"
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
     },
     {
@@ -73,8 +73,9 @@
       "dependsOn": ["docker-build: debug"],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Discount/Discount.API/Discount.API.csproj",
-        "enableDebugging": true
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj",
+        "enableDebugging": true,
+        "configureSsl": false
       }
     },
     {
@@ -83,7 +84,7 @@
       "dependsOn": ["docker-build: release"],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Discount/Discount.API/Discount.API.csproj"
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
     }
   ]

@@ -6,9 +6,29 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/Services/Discount/Discount.API/bin/Debug/net5.0/Discount.API.dll",
+      "program": "${workspaceFolder}/Services/Basket/Basket.API/bin/Debug/net5.0/Basket.API.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Services/Discount/Discount.API",
+      "cwd": "${workspaceFolder}/Services/Basket/Basket.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": "Launch Grpc",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/Services/Discount/Discount.Grpc/bin/Debug/net5.0/Discount.Grpc.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Services/Discount/Discount.Grpc",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",
@@ -32,8 +52,14 @@
       "request": "launch",
       "preLaunchTask": "docker-run: debug",
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Discount/Discount.API/Discount.API.csproj"
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Basket.API/Discount.Grpc",
+      "configurations": [".NET Core Launch (web)", "Launch Grpc"]
     }
   ]
 }
