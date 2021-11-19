@@ -42,6 +42,26 @@
       }
     },
     {
+      "name": "Ordering.API",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/Services/Ordering/Ordering.API/bin/Debug/net5.0/Ordering.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Services/Ordering/Ordering.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
       "name": ".NET Core Attach",
       "type": "coreclr",
       "request": "attach"
@@ -52,7 +72,7 @@
       "request": "launch",
       "preLaunchTask": "docker-run: debug",
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
+        "appProject": "${workspaceFolder}/Services/Ordering/Ordering.API/Ordering.API.csproj"
       }
     }
   ],
