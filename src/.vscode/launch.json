@@ -79,7 +79,11 @@
   "compounds": [
     {
       "name": "Basket.API/Discount.Grpc",
-      "configurations": [".NET Core Launch (web)", "Launch Grpc"]
+      "configurations": [
+        ".NET Core Launch (web)",
+        "Launch Grpc",
+        "Ordering.API"
+      ]
     }
   ]
 }
