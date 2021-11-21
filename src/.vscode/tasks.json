@@ -45,12 +45,12 @@
       "dockerBuild": {
         "tag": "src:dev",
         "target": "base",
-        "dockerfile": "${workspaceFolder}/Services/Ordering/Ordering.API/Dockerfile",
+        "dockerfile": "${workspaceFolder}/ApiGateways/Shopping.Aggregator/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Ordering/Ordering.API/Ordering.API.csproj"
+        "appProject": "${workspaceFolder}/ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj"
       }
     },
     {
@@ -59,12 +59,12 @@
       "dependsOn": ["build"],
       "dockerBuild": {
         "tag": "src:latest",
-        "dockerfile": "${workspaceFolder}/Services/Ordering/Ordering.API/Dockerfile",
+        "dockerfile": "${workspaceFolder}/ApiGateways/Shopping.Aggregator/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Ordering/Ordering.API/Ordering.API.csproj"
+        "appProject": "${workspaceFolder}/ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj"
       }
     },
     {
@@ -73,7 +73,7 @@
       "dependsOn": ["docker-build: debug"],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Ordering/Ordering.API/Ordering.API.csproj",
+        "appProject": "${workspaceFolder}/ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj",
         "enableDebugging": true,
         "configureSsl": false
       }
@@ -84,7 +84,7 @@
       "dependsOn": ["docker-build: release"],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Ordering/Ordering.API/Ordering.API.csproj"
+        "appProject": "${workspaceFolder}/ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj"
       }
     }
   ]

@@ -62,6 +62,26 @@
       }
     },
     {
+      "name": "Shopping.Aggregator",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/ApiGateways/Shopping.Aggregator/bin/Debug/net5.0/Shopping.Aggregator.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/ApiGateways/Shopping.Aggregator",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
       "name": ".NET Core Attach",
       "type": "coreclr",
       "request": "attach"
@@ -72,7 +92,7 @@
       "request": "launch",
       "preLaunchTask": "docker-run: debug",
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Ordering/Ordering.API/Ordering.API.csproj"
+        "appProject": "${workspaceFolder}/ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj"
       }
     }
   ],
